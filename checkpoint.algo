@@ -1,0 +1,32 @@
+ALGORITHM sentence
+
+VAR
+
+    c:CHAR;
+    length, vowels: INTEGER:= 0;
+    words:INTEGER:=1;
+
+BEGIN
+
+    read(c);
+
+    WHILE (c <> ".") DO
+    length:= length+1;
+
+    IF (c <> " ") THEN
+            length := length + 1;
+        END_IF;
+
+    IF (c= " ") THEN
+    words:= words+1;
+    else if (c in ["a", "e", "i", "o", "u","A", "E", "I", "O", "U"]) THEN
+    vowels:= vowels+1;
+    END_IF
+
+    read(c); // to read the next character
+    END_WHILE
+    
+    length:= length+1; //to count the point "."
+    write(length,words,vowels);
+
+END
